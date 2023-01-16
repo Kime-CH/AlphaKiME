@@ -170,13 +170,13 @@ const tebaktebakan = {}
 
 module.exports = alpha = async (alpha, m, chatUpdate, store, reSize) => {
    try {
-      var body = (m.mtype === 'conversation') ? m.message.conversation : (m.mtype == 'imageMessage') ? m.message.imageMessage.caption : (m.mtype == 'videoMessage') ? m.message.videoMessage.caption : (m.mtype == 'extendedTextMessage') ? m.message.extendedTextMessage.text : (m.mtype == 'buttonsResponseMessage') ? m.message.buttonsResponseMessage.selectedButtonId.slice(1) : (m.mtype == 'listResponseMessage') ? m.message.listResponseMessage.singleSelectReply.selectedRowId?.slice(1) : (m.mtype == 'templateButtonReplyMessage') ? m.message.templateButtonReplyMessage.selectedId.slice(1) : (m.mtype == 'messageContextInfo') ? (m.message.buttonsResponseMessage?.selectedButtonId.slice(1) || m.message.listResponseMessage?.singleSelectReply.selectedRowId?.slice(1) || m.text) : ""
+      var body = (m.mtype === 'conversation') ? m.message.conversation : (m.mtype == 'imageMessage') ? m.message.imageMessage.caption : (m.mtype == 'videoMessage') ? m.message.videoMessage.caption : (m.mtype == 'extendedTextMessage') ? m.message.extendedTextMessage.text : (m.mtype == 'buttonsResponseMessage') ? m.message.buttonsResponseMessage.selectedButtonId : (m.mtype == 'listResponseMessage') ? m.message.listResponseMessage.singleSelectReply.selectedRowId : (m.mtype == 'templateButtonReplyMessage') ? m.message.templateButtonReplyMessage.selectedId : (m.mtype == 'messageContextInfo') ? (m.message.buttonsResponseMessage?.selectedButtonId || m.message.listResponseMessage?.singleSelectReply.selectedRowId || m.text) : ""
       var budy = (typeof m.text == 'string' ? m.text : '')
        //console.log(body);
-      const isCmd = /^[^°•π÷×¶∆£¢€¥®™�✓_=|~!?#/$%^&.+-,\\\©^]/.test(body)
+      const isCmd = /^[°•π÷×¶∆£¢€¥®™�✓_=|~!?#/$%^&.+-,\\\©^]/.test(body)
       const prefix = isCmd ? budy[0] : '';
-      //const command = isCmd ? body.slice(1).trim().split(' ').shift().toLowerCase() : '';
-       const command = isCmd ? body.trim().split(' ').shift().toLowerCase() : '';
+      const command = isCmd ? body.slice(1).trim().split(' ').shift().toLowerCase() : '';
+       //const command = isCmd ? body.trim().split(' ').shift().toLowerCase() : '';
       const from = mek.key.remoteJid
       const time = moment(Date.now()).tz(timezone).locale('id').format('HH:mm:ss z')
       const wita = moment(Date.now()).tz('Asia/Makassar').locale('id').format('HH:mm:ss z')
