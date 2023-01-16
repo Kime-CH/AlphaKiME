@@ -1,19 +1,5 @@
 /**
-	@ No Re Upload, recode sendiri base nya klo mau 😏
-	@ Sc no enc silahkan cek https://github.com/DikaArdnt/Hisoka-Morou
- 
-	 「 TqTo 」
-	@ My God
-	@ My Parents
-	@ Fatih A.
-	@ Ferdi
-	@ DikaArdnt [author]
-	@ Mhankbarbar
-	@ Nurutomo
-	@ Rashid
-	@ ZeeoneOfc
-	@ Penyedia Module
-	@ And All Support
+No
 **/
 
 
